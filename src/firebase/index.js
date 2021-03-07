@@ -29,4 +29,6 @@ const fireStore = firebase.firestore()
 
 const timestamp = firebase.firestore.FieldValue.serverTimestamp
 
-export { fireStorage, fireStore, timestamp }
+const STATE_CHANGED = firebase.storage.TaskEvent.STATE_CHANGED
+
+export { fireStorage, fireStore, timestamp, STATE_CHANGED }
