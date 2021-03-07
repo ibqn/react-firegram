@@ -27,4 +27,6 @@ firebase.initializeApp(firebaseConfig)
 const fireStorage = firebase.storage()
 const fireStore = firebase.firestore()
 
-export { fireStorage, fireStore }
+const timestamp = firebase.firestore.FieldValue.serverTimestamp
+
+export { fireStorage, fireStore, timestamp }
