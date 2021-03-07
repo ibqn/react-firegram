@@ -2,8 +2,9 @@ import { useEffect } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import useStorage from '../hooks/useStorage'
+import { motion } from 'framer-motion'
 
-const Progress = styled.div`
+const Progress = styled(motion.div)`
   height: 5px;
   background: var(--primary);
   width: ${(props) => props.progress || 0}%;
@@ -20,7 +21,13 @@ const ProgressBar = ({ file, setFile }) => {
   }, [url, progress, setFile])
 
   console.log(progress, url)
-  return <Progress progress={progress}></Progress>
+  return (
+    <Progress
+      progress={progress}
+      initial={{ width: 0 }}
+      animate={{ width: `${progress}%` }}
+    ></Progress>
+  )
 }
 
 ProgressBar.propTypes = {
