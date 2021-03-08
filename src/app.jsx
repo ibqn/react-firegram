@@ -1,12 +1,11 @@
 import styled from 'styled-components'
+import { Helmet } from 'react-helmet'
 import { useState } from 'react'
 import GlobalStyles from './components/global-styles'
 import ImageGrid from './components/image-grid'
 import Title from './components/title'
 import UploadFile from './components/upload-file'
 import Modal from './components/modal'
-
-import './app.css'
 
 const Div = styled.div`
   max-width: 960px;
@@ -18,6 +17,12 @@ const App = () => {
 
   return (
     <Div>
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
       <GlobalStyles />
       <Title />
       <UploadFile />
