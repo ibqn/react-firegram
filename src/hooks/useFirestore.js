@@ -19,7 +19,7 @@ const useFireStore = (collection) => {
     return () => unsubscribe()
   }, [collection])
 
-  return { docs }
+  return [docs]
 }
 
 export default useFireStore

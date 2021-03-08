@@ -12,7 +12,7 @@ const Progress = styled(motion.div)`
 `
 
 const ProgressBar = ({ file, setFile }) => {
-  const { url, progress } = useStorage(file)
+  const [url, progress] = useStorage(file)
 
   useEffect(() => {
     if (url && progress === 100) {

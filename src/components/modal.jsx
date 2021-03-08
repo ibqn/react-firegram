@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { motion } from 'framer-motion'
+import useRemove from '../hooks/useRemove'
 
 const Backdrop = styled(motion.div)`
   position: fixed;
@@ -22,13 +23,16 @@ const Img = styled(motion.img)`
 
 const Modal = (props) => {
   const { selectedImg, setSelectedImg } = props
+  const [removeImage] = useRemove(() => setSelectedImg(null))
 
   const handleClick = (event) => {
-    console.log(event.target, 'type', event.target.tagName)
-    if (event.target.tagName !== 'IMG') {
+    // if clicked outside of image block
+    if (event.target === event.currentTarget) {
       setSelectedImg(null)
     }
   }
+
+  const handleRemove = () => removeImage(selectedImg)
 
   return (
     <Backdrop
@@ -42,7 +46,7 @@ const Modal = (props) => {
         initial={{ y: '-100vh' }}
         animate={{ y: 0 }}
       />
-      remove
+      <button onClick={handleRemove}>remove</button>
     </Backdrop>
   )
 }

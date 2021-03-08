@@ -58,7 +58,6 @@ const UploadFile = () => {
 
   const handleChange = ({ target: { files } }) => {
     const [selected] = files
-    console.log(selected)
 
     if (types.includes(selected?.type)) {
       setFile(selected)

@@ -30,7 +30,7 @@ const Img = styled(motion.img)`
 `
 
 const ImageGrid = ({ setSelectedImg }) => {
-  const { docs } = useFireStore('images')
+  const [docs] = useFireStore('images')
   const opacity = { opacity: 1 }
 
   return (

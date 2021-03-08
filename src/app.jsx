@@ -6,6 +6,8 @@ import Title from './components/title'
 import UploadFile from './components/upload-file'
 import Modal from './components/modal'
 
+import './app.css'
+
 const Div = styled.div`
   max-width: 960px;
   margin: 0 auto;
